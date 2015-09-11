@@ -22,6 +22,13 @@ limitations under the License.
     <link rel="stylesheet" href="/samples/styles/main.css">
     <link rel="manifest" href="manifest.json">
     <script> 
+    var flagShowCustom = 1;
+    function show(){
+        if(flagShow == 1) {
+            document.getElementById('banner').innerHTML = 'SHOW CUSTOM BANNER';
+        }
+   };
+
     window.addEventListener('load', function() {
 
       var outputElement = document.getElementById('output');
@@ -38,11 +45,15 @@ limitations under the License.
       window.addEventListener('beforeinstallprompt', function(e) {
         outputElement.textContent = 'beforeinstallprompt Event fired';
       });
+      
+      window.setTimeout( show, 1000 ); // 5 seconds
     });
     
-    
+   
+   
       function myFunction() {
         document.getElementById("demo").innerHTML = document.getElementById('output').innerHTML;
+        flagShowCustom = 0;
       }
     </script>
   </head>
@@ -51,6 +62,7 @@ limitations under the License.
 
     <p>Available in <a href="https://www.chromestatus.com/features/4540065577435136">Chrome 42+ (for Android)</a></p>
 
+    <p id="banner"></p>
     <button onclick="myFunction()">Click me</button>
     <p id="demo"></p>
     
