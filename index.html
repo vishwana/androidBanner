@@ -24,7 +24,7 @@ limitations under the License.
     <script> 
     var flagShowCustom = 1;
     function show(){
-        if(flagShow == 1) {
+        if(flagShowCustom == 1) {
             document.getElementById('banner').innerHTML = 'SHOW CUSTOM BANNER';
         }
    };
@@ -46,7 +46,7 @@ limitations under the License.
         outputElement.textContent = 'beforeinstallprompt Event fired';
       });
       
-      window.setTimeout( show, 1000 ); // 5 seconds
+      window.setTimeout( show, 1000 ); // 1 second
     });
     
    
