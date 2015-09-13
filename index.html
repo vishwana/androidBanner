@@ -44,6 +44,7 @@ limitations under the License.
        
       window.addEventListener('beforeinstallprompt', function(e) {
         outputElement.textContent = 'beforeinstallprompt Event fired';
+        flagShowCustom = 0;
       });
       
       window.setTimeout( show, 3000 ); // 2 seconds
